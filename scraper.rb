@@ -1,25 +1,15 @@
-# This is a template for a Ruby scraper on morph.io (https://morph.io)
-# including some code snippets below that you should find helpful
+require 'uk_planning_scraper'
+require 'scraperwiki'
 
-# require 'scraperwiki'
-# require 'mechanize'
-#
-# agent = Mechanize.new
-#
-# # Read in a page
-# page = agent.get("http://foo.com")
-#
-# # Find somehing on the page using css selectors
-# p page.at('div.content')
-#
-# # Write out to the sqlite database using scraperwiki library
-# ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
-#
-# # An arbitrary query against the database
-# ScraperWiki.select("* from data where 'name'='peter'")
+auths = UKPlanningScraper::Authority.tagged('london')
 
-# You don't have to do things with the Mechanize or ScraperWiki libraries.
-# You can use whatever gems you want: https://morph.io/documentation/ruby
-# All that matters is that your final data is written to an SQLite database
-# called "data.sqlite" in the current working directory which has at least a table
-# called "data".
+auths.each_with_index do |auth, i|
+  begin
+    puts "#{i + 1} of #{auths.size}: Scraping #{auth.name}"
+    apps = auth.scrape({ decided_days: ENV['MORPH_DAYS'] })
+    ScraperWiki.save_sqlite([:authority_name, :council_reference], apps)
+    puts "#{auth.name}: #{apps.size} application(s) saved."
+  rescue UKPlanningScraper::SystemNotSupportedError => e
+    puts e
+  end
+end
