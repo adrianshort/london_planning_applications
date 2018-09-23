@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/adrianshort/uk_planning_scraper.git
-  revision: 2e100bc3c88964a08ef05691887a07cbc1d60e82
-  ref: 2e100bc
+  revision: 7349fd6470326964451f0405ffc92fc1c955e82a
+  ref: 7349fd6
   specs:
     uk_planning_scraper (0.2.0)
       http
