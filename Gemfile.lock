@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/adrianshort/uk_planning_scraper.git
-  revision: ca5588706b33e48a88acb5f3f0ea6b94f965fdfe
+  revision: 8a070e17732b3304e7e73a81cb7538795fe604c0
+  ref: 8a070e1
   specs:
     uk_planning_scraper (0.2.0)
       http
@@ -49,7 +50,7 @@ GEM
     net-http-digest_auth (1.4.1)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
-    nokogiri (1.8.4)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
     public_suffix (3.0.3)
