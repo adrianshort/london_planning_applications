@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/adrianshort/uk_planning_scraper.git
-  revision: 8a070e17732b3304e7e73a81cb7538795fe604c0
-  ref: 8a070e1
+  revision: cad5fcd2b98260572dccf0a4cf1ddfeabc469a43
+  ref: cad5fcd
   specs:
-    uk_planning_scraper (0.2.0)
+    uk_planning_scraper (0.4.0)
       http
       mechanize (~> 2.7)
 
@@ -24,7 +24,7 @@ GEM
     connection_pool (2.2.2)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    http (3.3.0)
+    http (4.0.0)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
       http-form_data (~> 2.0)
